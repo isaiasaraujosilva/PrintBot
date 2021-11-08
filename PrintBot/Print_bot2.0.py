@@ -19,4 +19,4 @@ while 0==0:
             sleep(5)
             os.remove(caminho+'\\'+arquivo)
             sleep (5)
-            c
+            
