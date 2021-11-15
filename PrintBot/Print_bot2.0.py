@@ -5,9 +5,10 @@ from time import sleep
 from pathlib import Path
 
 #Colocar aqui o comando para o python Criar uma pasta
-caminho= os.getcwd()+'\imprimir'
+caminho= os.getcwd()
 try:
-    os.mkdir(caminho+'\\'+'imprimir')    
+    os.mkdir(caminho+'\\'+'imprimir')
+    print('Criando pasta Imprimir')    
 except:
     print('Pasta imprimir já existe') 
 #lista_arquivos=os.listdir(caminho)

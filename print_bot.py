@@ -9,7 +9,7 @@ impressora = lista_impressoras[3]
 win32print.SetDefaultPrinter(impressora[2])
 
 #mandar imprimir todos os arquivos de uma pasta
-caminho = r"C:\Users\Isaias\OneDrive\Projetos\DesenvolvementoDeSoftware\Python\pythonProject\PrintBot\imprimir"
+caminho = r"C:\Users\IsaiasDev\OneDrive\Projetos\DesenvolvementoDeSoftware\PrintBot\imprimir"
 #spooler=r"C:\Windows\System32\spool\PRINTERS"
 #lista_spooler=os.listdir(spooler)
 #print(lista_spooler)
