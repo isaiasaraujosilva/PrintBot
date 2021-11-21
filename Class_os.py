@@ -5,6 +5,8 @@ folder_print=main_folder+'\\'+'imprimir'
 class System:
     def getMainFolder():
             return main_folder
+    def getPrintFolder():
+        return folder_print        
     def createFolder(folder):
         try:
             os.mkdir(main_folder+'\\'+folder)
@@ -17,5 +19,13 @@ class System:
          cout=len(os.listdir(folder_print))
          return cout
     def remover(deleteFile):
+      try:
         os.remove(folder_print+'\\'+deleteFile)
-        return print('Arquivo deletado: {}'.format(deleteFile))      
+      except PermissionError:
+          while PermissionError:
+                try:
+                    os.remove(folder_print+'\\'+deleteFile)  
+                except PermissionError:
+                        pass
+                break            
+    #return print('Arquivo deletado: {}'.format(deleteFile))      

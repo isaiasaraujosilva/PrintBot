@@ -1,11 +1,11 @@
 import win32api
-from Class_os import System
+#from Class_os import System
 
-system=System
-fileFolder=system.getMainFolder()
+#system=System
+#fileFolder=system.getMainFolder()
 
 class Printer:
-    def sendPrint(file):
+    def sendPrint(file,fileFolder):
         win32api.ShellExecute(0, "print", file, None, fileFolder, 0)
         
 #definir impressora
