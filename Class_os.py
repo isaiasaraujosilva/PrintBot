@@ -24,8 +24,9 @@ class System:
       except PermissionError:
           while PermissionError:
                 try:
-                    os.remove(folder_print+'\\'+deleteFile)  
+                    os.remove(folder_print+'\\'+deleteFile)
+                    break  
                 except PermissionError:
                         pass
-                break            
+                           
     #return print('Arquivo deletado: {}'.format(deleteFile))      
