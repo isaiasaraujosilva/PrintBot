@@ -21,7 +21,7 @@ while True:
         for i in system.fileList():
             print(i)
             #win32api.ShellExecute(0, "print", arquivo, None, caminho_imp, 0)
-            if i == 'hd.pdf':
+            if i =='hd.pdf' or i=='Hd.pdf' or i=='hD.pdf'or i=='HD.pdf':
                 printer.setImpEtiqueta(prtCodeEtiqueta)
                 sleep(2)
                 printer.sendPrint('hd_inservivel.pdf',system.getMainFolder())
