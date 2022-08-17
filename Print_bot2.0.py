@@ -2,6 +2,7 @@ from os import system
 from Class_os import System
 from time import sleep
 from Class_printer import Printer
+from fila import print_job_checker
 import win32print
 
 system=System
@@ -26,7 +27,7 @@ while True:
             print(i)
             #win32api.ShellExecute(0, "print", arquivo, None, caminho_imp, 0)
             printer.sendPrint(i,system.getPrintFolder())
-            if printer.print_job_checker == 0:
+            if print_job_checker() == 0:
                 system.remover(i)
                         
            
