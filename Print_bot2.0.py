@@ -2,13 +2,14 @@ from os import system
 from Class_os import System
 from time import sleep
 from Class_printer import Printer
+from fila import print_job_checker
 import win32print
 
 system=System
 system.createFolder('imprimir')
 printer=Printer
 print('Lista de impressoras instaladas no sistema:')
-genCode=-1
+genCode=-10
 
 for p in printer.getListPrinter():
     genCode=genCode+1
@@ -25,9 +26,7 @@ while True:
             print(i)
             #win32api.ShellExecute(0, "print", arquivo, None, caminho_imp, 0)
             printer.sendPrint(i,system.getPrintFolder())
-            print_jobs = win32print.EnumJobs(,0, -1, 1)
-            print(print_jobs)
-            sleep(5)    
+            print_job_checker()
             system.remover(i)
                         
            

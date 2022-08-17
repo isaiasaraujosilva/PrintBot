@@ -11,17 +11,14 @@ def print_job_checker():
             print(p)
             phandle = win32print.OpenPrinter(name)
             print_jobs = win32print.EnumJobs(phandle, 0, -1, 1)
+            print_jobs = win32print.EnumJobs(phandle, 0, -1, 1)
             if print_jobs:
                 jobs.extend(list(print_jobs))
             for job in print_jobs:
                 print ("printer name => " + name)
                 document = job["pDocument"]
                 print ("Document name => " + document)
-            win32print.ClosePrinter(phandle)
-            
+            win32print.ClosePrinter(phandle)            
         time.sleep(5)
     print ("No more jobs!")
         
-#----------------------------------------------------------------------
-if __name__ == "__main__":
-    print_job_checker()
