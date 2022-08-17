@@ -1,5 +1,6 @@
 import win32api
 import win32print
+import time
 #from Class_os import System
 #system=System
 #fileFolder=system.getMainFolder()
@@ -30,7 +31,29 @@ class Printer:
             win32api.ShellExecute(0, "print", file, None, fileFolder, 0)
             return print('Aquivo enviado para a impressora: {} '.format(file))
         except:
-            return print("Erro: verifique o Foxit");
+            return print("Erro: verifique o Foxit")
+
+    def print_job_checker():
+        jobs = [1]
+        while jobs:
+            jobs = []
+            for p in win32print.EnumPrinters(win32print.PRINTER_ENUM_LOCAL,
+                                            None, 1):
+                flags, desc, name, comment = p
+                print(p)
+                phandle = win32print.OpenPrinter(name)
+                print_jobs = win32print.EnumJobs(phandle, 0, -1, 1)
+                #print_jobs = win32print.EnumJobs(phandle, 0, -1, 1)
+                if print_jobs:
+                    jobs.extend(list(print_jobs))
+                for job in print_jobs:
+                    print ("printer name => " + name)
+                    document = job["pDocument"]
+                    print ("Document name => " + document)
+                win32print.ClosePrinter(phandle)            
+            time.sleep(5)
+        return 0
+            
 
 
-  
+    

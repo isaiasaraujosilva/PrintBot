@@ -2,14 +2,13 @@ from os import system
 from Class_os import System
 from time import sleep
 from Class_printer import Printer
-from fila import print_job_checker
 import win32print
 
 system=System
 system.createFolder('imprimir')
 printer=Printer
 print('Lista de impressoras instaladas no sistema:')
-genCode=-10
+genCode=-1
 
 for p in printer.getListPrinter():
     genCode=genCode+1
@@ -17,6 +16,7 @@ for p in printer.getListPrinter():
     print(' ---> {} {}'.format(genCode,p1[2]))
 
 prtCodeA4=input('Digite o numero da impressora de A4: ')
+
 printer.setImpA4(prtCodeA4)
 print('\n \n Em Execução...')
 
@@ -26,8 +26,8 @@ while True:
             print(i)
             #win32api.ShellExecute(0, "print", arquivo, None, caminho_imp, 0)
             printer.sendPrint(i,system.getPrintFolder())
-            print_job_checker()
-            system.remover(i)
+            if printer.print_job_checker == 0:
+                system.remover(i)
                         
            
             
