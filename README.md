@@ -20,3 +20,17 @@ Aplicação desenvolvida para automação de envio de impressões atraves de uma
     * dependencia python pywin32  
     
             pip install pywin32
+
+* Foxit 
+
+    * Baixe o pacote de instalação neste link https://www.foxit.com/pt-br/downloads/ e instale no Windows 
+    * Adicione o Foxit como programa padrão do sistema
+## Compartilhamento de pasta
+    1. Compartilhando pastas em ambiente Windows
+    2. Localize a pasta que será compartilhada e clique com o botão direito do mouse;
+    3. Escolha "compartilhar com ..." ou “conceder acesso a..” ou selecione "pessoas específicas";
+    4. Identifique o usuário, grupo de usuários ou aplicativo que terá permissão para acessar esse conteúdo.
+
+## Como Utilizar
+
+* Se tudo estiver devidamente configurado basta colocar um arquivo .PDF na pasta que automaticamente o script enviara o arquivo para a impressora
